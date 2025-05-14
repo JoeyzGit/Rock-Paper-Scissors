@@ -22,9 +22,6 @@ function playRound(humanChoice, computerChoice) {
     
     let hChoice = humanChoice.toLowerCase(); 
 
-    let humanScore = 0;    
-    let computerScore = 0;
-
     console.log("Computer Chose : " + computerChoice);
     console.log("You chose : " + humanChoice);
 
@@ -71,13 +68,27 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-}
+    humanScore = 0;    
+    computerScore = 0;
 
-for(let i = 0; i < 5; i++) {
+    for(let i = 0; i < 5; i++) {
     const humanSelects = getHumanChoice();
     const computerSelects = getComputerChoice();
     playRound(humanSelects, computerSelects);
+    }
+
+    if (humanScore < computerScore) {
+        console.log("Alas! You have lost the game!");
+    } else if (humanScore > computerScore) {
+        console.log("Congratulations, you have won the game!");
+    } else {
+        console.log("The game ends in a draw!");
+    }
 }
+
+playGame();
+
+
 
 
 // console.log(getComputerChoice());
